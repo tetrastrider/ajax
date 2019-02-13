@@ -1,0 +1,12 @@
+#Fix Rewrite
+Options -Multiviews
+RewriteEngine on 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*)$ $1.php
+RewriteCond %{HTTP_HOST} ^www\.eliterd\.net$ [NC]
+RewriteRule ^(.*)$ http://eliterd.net/$1 [R=301,L]
+AddDefaultCharset utf-8
+DirectoryIndex inicio.php
+php_value auto_prepend_file none
+
